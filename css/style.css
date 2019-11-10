@@ -1,0 +1,129 @@
+@charset "UTF-8";
+
+body {
+    margin-top: 60px;
+    background-color: #4169E1; 
+    opacity: 0.9;
+    box-sizing: border-box;
+    padding: 0;
+}
+
+.container {
+    margin-bottom: 20px;
+}
+
+h2::after {
+    content: '|';
+    margin-left: 5px;
+    opacity: 1;
+    animation: pisca .7s infinite;
+}
+
+@keyframes pisca {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+}
+
+#cadastro {
+    border-radius: 15% 5%;
+    border: solid 1px rgba(0, 0, 0, 0.2);
+    box-sizing: border-box;
+    padding: 30px;
+    background-color: white;
+}
+
+.cad-user-icon {
+    box-sizing: border-box;
+    padding: 10px;
+    background-color: transparent;
+    border: solid 1px rgba(0, 0, 0, 0.2);
+    border-right: none;
+}
+
+#cad-senha-icon {
+    box-sizing: border-box;
+    padding: 10px;
+    background-color: transparent;
+    border: solid 1px rgba(0, 0, 0, 0.2);
+    border-right: none;
+}
+
+#cad-email-icon {
+    box-sizing: border-box;
+    padding: 10px;
+    background-color: transparent;
+    border: solid 1px rgba(0, 0, 0, 0.2);
+    border-right: none;
+}
+
+#eye {
+    float: right;
+    box-sizing: border-box;
+    padding: 10px;
+    background-color: transparent;
+    border: solid 1px rgba(0, 0, 0, 0.2);
+    border-radius: 0 0;
+    border-left: none;
+    box-shadow: none;
+}
+
+#iSenha-login {
+    border-right: none;
+}
+
+#iUser-login {
+    border-radius: 0 0;
+}
+
+.jumbotron {
+    box-sizing: border-box;
+    padding: 0;
+    height: 444px;
+    background-color: white;
+}
+
+#login-box-principal {
+    box-sizing: border-box;
+    padding: 0;
+}
+
+#titulo-login {
+    background-color:#483D8B;
+    opacity: 0.8;
+    height: 100px;
+    box-sizing: border-box;
+    padding: 33px;
+    color: white;
+}
+
+#bk-titulo-login {
+    background: url('../img/terminal.gif') 100% 100%;
+    box-sizing: border-box;
+    padding: 0;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    border: none;
+    height: 100px;
+}
+
+#login-box-body {
+    background-color: white;
+    background-image: url('../img/user.png');
+    background-repeat: no-repeat;
+    background-position: 90% 95%;
+    margin-top: 0;
+    box-sizing: border-box;
+    padding: 30px;
+    height: 422px;
+}
+
+#rodape-login {
+    margin-top: 70px;
+    box-sizing: border-box;
+    padding: 10px;
+    background-color: white;
+}
