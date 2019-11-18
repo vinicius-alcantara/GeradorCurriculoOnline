@@ -44,7 +44,7 @@ $statusCad = isset($_GET["statusCad"]) ? $_GET["statusCad"] : 0;
                   echo $statusCadMen2;
               }
             ?>
-            <form method="GET" action="cadastro.php">
+            <form method="POST" action="cadastro.php">
               <div class="form-group">
                 <label for="iNomeCad"><strong>Nome:</strong></label>
                 <div class="input-group">
