@@ -1,3 +1,6 @@
+<?php
+$statusCad = isset($_GET["statusCad"]) ? $_GET["statusCad"] : 0;
+?>
 <!doctype html>
 <html lang="pt-br">
   <head>
@@ -20,7 +23,28 @@
             <h1 id="titulo-animado" class="display-4">My Curriculum</h1>
             <h2 class="text-center">Cadastre-se!</h2>
             <hr class="my-2">
-            <form method="" action="">
+            <?php
+              $statusCadMen1 = '<div class="alert alert-danger alert-dismissible fade show" role="alert">
+              <strong>Usuário ou Email já existe na base de dados!</strong>
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>';
+
+              $statusCadMen2 = '<div class="alert alert-success alert-dismissible fade show" role="alert">
+              <strong>Usuário cadastrado com sucesso!</strong>
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>';
+
+              if($statusCad == 1){
+                  echo $statusCadMen1;
+              } elseif ($statusCad == 2){
+                  echo $statusCadMen2;
+              }
+            ?>
+            <form method="GET" action="cadastro.php">
               <div class="form-group">
                 <label for="iNomeCad"><strong>Nome:</strong></label>
                 <div class="input-group">
