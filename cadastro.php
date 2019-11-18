@@ -3,10 +3,10 @@
 require_once("bd.class.php");
 
 // Recebe dados do formulário de cadastro
-$nome = $_GET["nNomeCad"];
-$email = $_GET["nEmailCad"];
-$usuario = $_GET["nUserCad"];
-$senha = md5($_GET["nSenhaCad"]);
+$nome = $_POST["nNomeCad"];
+$email = $_POST["nEmailCad"];
+$usuario = $_POST["nUserCad"];
+$senha = md5($_POST["nSenhaCad"]);
 
 // Instanciando Objeto da classe de conexão com o banco de dados
 $objConnStart = new bd();
