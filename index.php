@@ -1,5 +1,6 @@
 <?php
 $statusCad = isset($_GET["statusCad"]) ? $_GET["statusCad"] : 0;
+$statusDelete = isset($_GET["statusDelete"]) ? $_GET["statusDelete"] : 0;
 ?>
 <!doctype html>
 <html lang="pt-br">
@@ -179,7 +180,28 @@ $statusCad = isset($_GET["statusCad"]) ? $_GET["statusCad"] : 0;
           </button>
         </div>
         <div class="modal-body">
-          <form method="" action="">
+        <?php
+          $statusDelMen1 = '<div class="alert alert-success alert-dismissible fade show" role="alert">
+          <strong>Cadastro removido com sucesso!</strong>
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>';
+
+          $statusDelMen2 = '<div class="alert alert-danger alert-dismissible fade show" role="alert">
+          <strong>Os dados fornecidos são inválidos!</strong>
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>';
+          
+          if($statusDelete == 1){
+              echo $statusDelMen1;
+          } elseif ($statusDelete == 2){
+              echo $statusDelMen2;
+          }
+        ?>
+          <form method="POST" action="removeCad.php">
             <div class="form-group">
                 <label for="iemailDelete"><strong>Email:</strong></label>
                 <div class="input-group">
@@ -237,5 +259,15 @@ $statusCad = isset($_GET["statusCad"]) ? $_GET["statusCad"] : 0;
       const titulo = document.querySelector('h2');
       typeWriter(titulo);  
     </script>
+
+    <!-- Chama modal Descadastrar automaticamente -->
+    <?php
+      if($statusDelete == 1 || $statusDelete == 2){ ?>
+        <script type="text/javascript">
+          $(document).ready(function(){
+            $('#Ijan-modal-descadastrar').modal('show');
+          }) ;
+        </script>
+      <?php } ?>
   </body>
 </html>
