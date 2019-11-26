@@ -1,6 +1,7 @@
 <?php
 $statusCad = isset($_GET["statusCad"]) ? $_GET["statusCad"] : 0;
 $statusDelete = isset($_GET["statusDelete"]) ? $_GET["statusDelete"] : 0;
+$statusLogin = isset($_GET["statusLogin"]) ? $_GET["statusLogin"] : 0;
 ?>
 <!doctype html>
 <html lang="pt-br">
@@ -95,7 +96,19 @@ $statusDelete = isset($_GET["statusDelete"]) ? $_GET["statusDelete"] : 0;
               </div>
             </div>
             <div id="login-box-body">
-              <form method="" action="">
+            <?php
+                $statusLoginMen = '<div class="alert alert-danger alert-dismissible fade show" role="alert">
+                <strong>Os dados do usuário são inválidos!</strong>
+                  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>';
+              
+                if($statusLogin == 1){
+                  echo $statusLoginMen;
+                }
+            ?>
+              <form method="POST" action="login.php">
                 <div class="form-group">
                     <label for="iUserLogin"><strong>Usuário:</strong></label>
                       <div class="input-group">
