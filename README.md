@@ -2,13 +2,13 @@
 
 Objetivo: Criar um sistema gerador de currículo online em PDF.
 
-# Teconologias utilizadas:
+## Teconologias utilizadas:
 
 * Frontend: HTML5, CSS3, JavaScript, Jquery, Font Awesome, Hover CSS e Bootstrap 4
 * Backend: PHP7
 * SGBD: MySQL
 
-# Features:
+## Features:
 
 * Cadastro de usuários
 * Remoção de cadastro de usuários
