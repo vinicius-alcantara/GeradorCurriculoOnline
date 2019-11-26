@@ -1,3 +1,8 @@
+<?php
+    session_start();
+    if(!isset($_SESSION["usuario"])) header("Location: index.php?statusLogin=1");
+?>
+
 <!DOCTYPE html>
 <html>
 <head>

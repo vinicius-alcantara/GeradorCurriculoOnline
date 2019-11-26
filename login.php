@@ -1,4 +1,7 @@
 <?php
+// Inicia Sessão
+session_start();
+
 // Permite acesso a classe de conexão com o banco de dados
 require_once("bd.class.php");
 
@@ -11,13 +14,15 @@ $objConnStart = new bd();
 $objConnStartResult = $objConnStart->conn_db();
 
 // Comandos SQL
-$sqlSelect = "select usuario, senha from usuarios where usuario = '$usuario' and senha = '$senha'";
+$sqlSelect = "select email, usuario, senha from usuarios where usuario = '$usuario' and senha = '$senha'";
 $resourceSqlSelect = mysqli_query($objConnStartResult, $sqlSelect);
 
 // Lógica de validação
 if($resourceSqlSelect == true){
     $resourceSqlSelectArray = mysqli_fetch_array($resourceSqlSelect);
     if($resourceSqlSelectArray["usuario"] == $usuario && $resourceSqlSelectArray["senha"] == $senha){
+        $_SESSION["usuario"] = $resourceSqlSelectArray["usuario"];
+        $_SESSION["email"] = $resourceSqlSelectArray["email"];
         header("Location: home.php");
     } else {
         header("Location: index.php?statusLogin=1");
