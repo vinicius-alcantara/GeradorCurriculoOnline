@@ -2,6 +2,7 @@
 $statusCad = isset($_GET["statusCad"]) ? $_GET["statusCad"] : 0;
 $statusDelete = isset($_GET["statusDelete"]) ? $_GET["statusDelete"] : 0;
 $statusLogin = isset($_GET["statusLogin"]) ? $_GET["statusLogin"] : 0;
+$statusUpdateSenha = isset($_GET["statusUpdateSenha"]) ? $_GET["statusUpdateSenha"] : 0;
 ?>
 <!doctype html>
 <html lang="pt-br">
@@ -146,7 +147,28 @@ $statusLogin = isset($_GET["statusLogin"]) ? $_GET["statusLogin"] : 0;
           </button>
         </div>
         <div class="modal-body">
-          <form method="" action="">
+        <?php
+            $statusUpdateSenhaMen1 = '<div class="alert alert-success alert-dismissible fade show" role="alert">
+            <strong>Senha atualizada com sucesso!</strong>
+              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>';
+  
+            $statusUpdateSenhaMen2 = '<div class="alert alert-danger alert-dismissible fade show" role="alert">
+            <strong>Os dados fornecidos são inválidos!</strong>
+              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>';
+            
+            if($statusUpdateSenha == 1){
+                echo $statusUpdateSenhaMen1;
+            } elseif($statusUpdateSenha == 2){
+                echo $statusUpdateSenhaMen2;
+            }
+        ?>
+          <form method="POST" action="updateSenha.php">
             <div class="form-group">
                 <label for="iemailUpdate"><strong>Email:</strong></label>
                 <div class="input-group">
@@ -281,6 +303,16 @@ $statusLogin = isset($_GET["statusLogin"]) ? $_GET["statusLogin"] : 0;
             $('#Ijan-modal-descadastrar').modal('show');
           }) ;
         </script>
+      <?php } ?>
+
+    <!-- Chama modal update senha automaticamente -->
+    <?php
+      if($statusUpdateSenha == 1 || $statusUpdateSenha == 2){ ?>
+          <script type="text/javascript">
+            $(document).ready(function(){
+              $('#Ijan-modal-senha').modal('show');
+            });
+          </script>
       <?php } ?>
   </body>
 </html>
