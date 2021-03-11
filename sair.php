@@ -12,7 +12,7 @@ unset($_SESSION["email"]);
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="../mycurriculo/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../curriculo/bootstrap/css/bootstrap.min.css">
   </head>
   <body>
 
@@ -36,9 +36,9 @@ unset($_SESSION["email"]);
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script type="text/javascript" src="../mycurriculo/js/jquery-3.4.1.slim.min.js"></script>
-    <script type="text/javascript" src="../mycurriculo/js/popper.min.js"></script>
-    <script type="text/javascript" src="../mycurriculo/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../curriculo/js/jquery-3.4.1.slim.min.js"></script>
+    <script type="text/javascript" src="../curriculo/js/popper.min.js"></script>
+    <script type="text/javascript" src="../curriculo/bootstrap/js/bootstrap.min.js"></script>
 
 <?php
 
